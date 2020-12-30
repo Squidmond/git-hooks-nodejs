@@ -7,7 +7,8 @@
     "test": "jest",
     "lint": "eslint src/**",
     "lint-init": "eslint --init",
-    "lint-fix": "eslint src/** --fix"
+    "lint-fix": "eslint src/** --fix",
+    "success-message": "echo Thanks for commiting $GIT_AUTHOR_NAME"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "npm run success-message"
     }
   },
   "lint-staged": {
